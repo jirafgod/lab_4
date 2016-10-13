@@ -11,4 +11,3 @@ goods = [
 # Реализация задания 1
 print(list(field(goods,'title','color')))
 print(list(gen_random(1,4,5)))
-

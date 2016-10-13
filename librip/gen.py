@@ -16,13 +16,13 @@ def field(items, *args):
     # Необходимо реализовать генератор
     for el in items:
         buff = {}
-        if (lenargs==1):
-            if el[args[0]]!=None:
+        if (lenargs == 1):
+            if el[args[0]] != None:
                 yield el[args[0]]
         else:
             for ar in args:
                 if el[ar] != None:
-                    buff[ar]=el[ar]
+                    buff[ar] = el[ar]
             yield buff
 
 

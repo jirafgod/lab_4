@@ -36,7 +36,7 @@ def f3(arg):
 
 @print_result
 def f4(arg):
-    return list(map(lambda x: "{}, зарплата {} ".format(*x), zip(arg, gen_random(100000, 200000, len(arg)))))
+    return list(map(lambda x: "{}, зарплата {} руб.".format(*x), zip(arg, gen_random(100000, 200000, len(arg)))))
 
 
 with timer():

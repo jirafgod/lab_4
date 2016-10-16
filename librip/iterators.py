@@ -1,7 +1,9 @@
-from collections import Counter
 # Итератор для удаления дубликатов
 class Unique(object):
-    ignore_case=False
+    ignore_case = False
+    i = 0
+    buff = []
+
     def __init__(self, items, **kwargs):
         # Нужно реализовать конструктор
         # В качестве ключевого аргумента, конструктор должен принимать bool-параметр ignore_case,
@@ -13,15 +15,15 @@ class Unique(object):
         if (len(kwargs)>0 and kwargs['ignore_case']!=None) and (type(kwargs['ignore_case'])==bool):
             self.ignore_case=kwargs['ignore_case']
         self.arr = items
-        self.buff=[]
     def __next__(self):
-        for i in self.arr:
-            temp = str(i)
+        while self.i < len(self.arr):             
+            temp = str(self.arr[self.i])
             if (self.ignore_case):
                 temp = temp.lower()
             if not temp in self.buff:
                 self.buff.append(temp)
-                return temp
+                return self.arr[self.i]
+            self.i+=1
         raise StopIteration()
 
 

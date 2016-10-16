@@ -32,5 +32,5 @@ def field(items, *args):
 # Hint: реализация занимает 2 строки
 def gen_random(begin, end, num_count):
     for i in range(num_count):
-        yield random.randint(begin,end)
+        yield random.randint(begin, end)
     # Необходимо реализовать генератор

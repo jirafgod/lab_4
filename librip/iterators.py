@@ -2,7 +2,7 @@ from collections import Counter
 # Итератор для удаления дубликатов
 class Unique(object):
     ignore_case = False
-    i = 0
+    i = -1
     buff = []
 
     def __init__(self, items, **kwargs):

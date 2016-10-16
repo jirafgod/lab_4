@@ -1,3 +1,4 @@
+from collections import Counter
 # Итератор для удаления дубликатов
 class Unique(object):
     ignore_case = False
@@ -14,16 +15,14 @@ class Unique(object):
         self.ignore_case = False
         if (len(kwargs) > 0 and kwargs['ignore_case'] != None) and (type(kwargs['ignore_case']) == bool):
             self.ignore_case = kwargs['ignore_case']
-        self.arr = items
+        self.arr = list(Counter(items))
     def __next__(self):
-        while self.i < len(self.arr):
+        while self.i < len(self.arr)-1:
+            self.i += 1
             temp = str(self.arr[self.i])
             if (self.ignore_case):
                 temp = temp.lower()
-            if not temp in self.buff:
-                self.buff.append(temp)
-                return self.arr[self.i]
-            self.i += 1
+            return self.arr[self.i]
         raise StopIteration()
 
 

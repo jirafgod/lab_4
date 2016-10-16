@@ -14,7 +14,7 @@ def print_result(func):
         if (type(cont) == list):
             print("\n".join([str(x) for x in cont]))
         elif (type(cont) == dict):
-            print("\n".join([str(x)+" = "+str(cont[x]) for x in cont]))
+            print("\n".join([str(x) + " = " + str(cont[x]) for x in cont]))
         else:
             print(cont)
 

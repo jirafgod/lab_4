@@ -28,7 +28,7 @@ def f1(arg):
 
 @print_result
 def f2(arg):
-    return list(filter(lambda x: str(x).startswith('Программист'), arg))
+    return list(filter(lambda x: str(x).startswith('программист'), arg))
 
 @print_result
 def f3(arg):

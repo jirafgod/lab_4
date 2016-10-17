@@ -15,13 +15,13 @@ class Unique(object):
         self.ignore_case = False
         if (len(kwargs) > 0 and kwargs['ignore_case'] != None) and (type(kwargs['ignore_case']) == bool):
             self.ignore_case = kwargs['ignore_case']
-        self.arr = list(Counter(items))
+            if(self.ignore_case):
+                self.arr = list(Counter(map(lambda x: x.lower(),items)))
+        else:
+            self.arr = list(Counter(items))
     def __next__(self):
         while self.i < len(self.arr)-1:
             self.i += 1
-            temp = str(self.arr[self.i])
-            if (self.ignore_case):
-                temp = temp.lower()
             return self.arr[self.i]
         raise StopIteration()
 

@@ -8,8 +8,7 @@ import time
 #
 # После завершения блока должно вывестись в консоль примерно 5.5
 class timer:
-    t = 0
     def __enter__(self):
-        self.t = time.clock()
+        self.t = time.time()
     def __exit__(self, exp_type, exp_value, traceback):
-        print(time.clock() - self.t)
+        print(time.time() - self.t)

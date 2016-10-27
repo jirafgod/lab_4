@@ -9,6 +9,6 @@ data3 = ['K', 'O', 'S', 'T', 'Y', 'A', '', 'g', 'o', 'd']
 
 print(list(Unique(data1)))
 
-print(list(Unique(list(data2))))
+print(list(Unique(data2)))
 
 print(list(Unique(data3, ignore_case=True)))

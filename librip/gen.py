@@ -17,13 +17,14 @@ def field(items, *args):
     for el in items:
         buff = {}
         if (lenargs == 1):
-            if el[args[0]] != None:
+            if el.get(args[0]):
                 yield el[args[0]]
         else:
             for ar in args:
-                if el[ar] != None:
+                if el.get(ar):
                     buff[ar] = el[ar]
-            yield buff
+            if len(buff) > 0:
+                yield buff
 
 
 # Генератор списка случайных чисел

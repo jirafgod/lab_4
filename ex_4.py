@@ -22,8 +22,14 @@ def test_3():
 def test_4():
     return [1, 2]
 
+@print_result
+def test_5(a, b=0, c=0):
+    return a+c
+
+
 
 test_1()
 test_2()
 test_3()
 test_4()
+test_5(2, c=2)

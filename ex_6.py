@@ -24,11 +24,11 @@ with open(path) as f:
 
 @print_result
 def f1(arg):
-    return list(unique(list(field(arg, "job-name")), ignore_case=True))
+    return sorted(unique(field(arg, "job-name"), ignore_case=True),key = lambda x: x.lower())
 
 @print_result
 def f2(arg):
-    return list(filter(lambda x: str(x).startswith('программист'), arg))
+    return list(filter(lambda x: str(x).startswith('Программист'), arg))
 
 @print_result
 def f3(arg):
